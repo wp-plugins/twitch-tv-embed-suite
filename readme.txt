@@ -8,7 +8,7 @@ Stable Tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Twitch TV Embed Suite allows easy placement of a twitch tv stream and/or chat anywhere on your WordPress site.  Also contains a widget for displaying stream status.
+Twitch TV Embed Suite allows easy placement of a twitch tv stream and/or chat anywhere on your WordPress site.  
 == Description ==
 
 Twitch TV Embed Suite is a plugin that allows for fast and easy embedded of twitch tv stream and chat on your WordPress site. The plugin features an easy to configure 
@@ -33,11 +33,11 @@ settings area that allows the user to preview the stream prior to placement on y
 
 == Screenshots ==
 
-1. Settings /assets/preview-settings.jpg
-2. Widget /assets/preview_widget.jpg
-3. Stream with Chat /assets/preview_chat_stream.jpg
-4. Stream Icon for WYSIWYG Editor /assets/tv.png
-4. Chat Icon for WYSIWYG Editor /assets/chat.png
+1. Settings
+2. Widget 
+3. Stream with Chat 
+4. Stream Icon for WYSIWYG Editor
+4. Chat Icon for WYSIWYG Editor
 
 
 == Shortcode Usage ==
