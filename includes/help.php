@@ -33,13 +33,6 @@ The plugin also supports several attributes for the shortcode, below is a listin
 <li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitchembed/images/chat.png" alt="chat button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
 <code>echo do_shortcode('[plumwd_twitch_chat]');</code></li>
 </ul>
-<h3>Twitch Chat</h3>
-<p>This shortcode embeds the Twitch TV live stream chat box.</p>
-<ul>
-<li>To add a Twitch TV live stream box to your posts, pages, or widgets use the following shortcode:<br/><code>[plumwd_twitch_chat]</code></li>
-<li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitchembed/images/chat.png" alt="chat button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
-<code>echo do_shortcode('[plumwd_twitch_chat]');</code></li>
-</ul>
 <h3>Twitch TV Widget</h3>
 <p>This widget is to display the Twitch TV Stream status (offline/online).</p>
 <p>The widget includes the option to add a title, and also to display sharing buttons on both Facebook and Twitter. Add a Twitter username to send the tweet via @username.
