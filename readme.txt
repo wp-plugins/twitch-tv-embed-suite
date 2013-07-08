@@ -70,3 +70,8 @@ The plugin also supports several attributes for the shortcode, below is a listin
 == Frequently Asked Questions ==
 
 For help please visit http://www.plumeriawebdesign.com
+
+== Changelog ==
+
+= 1.0.1 =
+* Fixed footer credits
