@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 1.0.1
+Version: 1.0.2
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -340,8 +340,10 @@ function plumwd_twitch_admin_footer_text($my_footer_text) {
   $my_footer_text = "<span class=\"credit\"><img src=\"$plugin_url/twitchembed/images/plumeria.png\" alt=\"Plumeria Web Design Logo\"/><a href=\"http://www.plumeriawebdesign.com/twitch-tv-embed-suite\">Twitch TV Embed Suite</a>. Developed by <a href=\"http://www.plumeriawebdesign.com\">Plumeria Web Design</a></span>";
 	return $my_footer_text;
 }
+if(isset($_GET['page'])) {
 if ($_GET['page'] == "twitch-options") {
   add_filter('admin_footer_text', 'plumwd_twitch_admin_footer_text');
+}
 }
 
 ?>

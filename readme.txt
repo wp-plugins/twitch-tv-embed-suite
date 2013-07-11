@@ -73,5 +73,8 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed undefined index error
+
 = 1.0.1 =
 * Fixed footer credits
