@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 1.0.2
+Version: 1.0.3
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -111,7 +111,7 @@ function twitch_settings() {
   <div class="metabox-holder postbox" style="padding-top:0;margin:10px;cursor:auto;width:30%;float:left;min-width:320px">
     <h3 class="hndle" style="cursor: auto;"><span><?php  _e( 'Thank you for using Twitch Embed Suite', 'twitchembed' ); ?></span></h3>
     <div class="inside twitchembed">
-      <img src="<?php echo $plugin_url;?>/twitchembed/images/preview.jpg" alt="Twitch Preview" />
+      <img src="<?php echo $plugin_url;?>/twitch-tv-embed-suite/images/preview.jpg" alt="Twitch Preview" />
   	  <?php _e( 'Please support Plumeria Web Design so we can continue making rocking plugins for you. If you enjoy this plugin, please consider offering a small donation. We also look forward
 	  to your comments and suggestions so that we may further improve our plugins to better serve you.', 'twitchembed' ); ?>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -311,7 +311,7 @@ return $buttons;
 
 function add_plugin_sc_plumwd_twitch($plugin_array) {
 $plugin_url = plugins_url();
-$script_url = $plugin_url.'/twitchembed/scripts/shortcode.js';
+$script_url = $plugin_url.'/twitch-tv-embed-suite/scripts/shortcode.js';
 $plugin_array['plumwd_twitch_stream'] = $script_url; 
 return $plugin_array;
 }
@@ -336,8 +336,8 @@ add_action('admin_enqueue_scripts', 'plumwd_twitch_enqueue_scripts');
 
 function plumwd_twitch_admin_footer_text($my_footer_text) {
   $plugin_url = plugins_url();
-  $script_url = $plugin_url.'/twitchembed/scripts/shortcode.js';
-  $my_footer_text = "<span class=\"credit\"><img src=\"$plugin_url/twitchembed/images/plumeria.png\" alt=\"Plumeria Web Design Logo\"/><a href=\"http://www.plumeriawebdesign.com/twitch-tv-embed-suite\">Twitch TV Embed Suite</a>. Developed by <a href=\"http://www.plumeriawebdesign.com\">Plumeria Web Design</a></span>";
+  $script_url = $plugin_url.'/twitch-tv-embed-suite/scripts/shortcode.js';
+  $my_footer_text = "<span class=\"credit\"><img src=\"$plugin_url/twitch-tv-embed-suite/images/plumeria.png\" alt=\"Plumeria Web Design Logo\"/><a href=\"http://www.plumeriawebdesign.com/twitch-tv-embed-suite\">Twitch TV Embed Suite</a>. Developed by <a href=\"http://www.plumeriawebdesign.com\">Plumeria Web Design</a></span>";
 	return $my_footer_text;
 }
 if(isset($_GET['page'])) {
