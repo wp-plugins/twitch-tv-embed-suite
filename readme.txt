@@ -73,6 +73,9 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 1.0.4 = 
+* Autplay parameter was not set correctly
+
 = 1.0.3 = 
 * Fixed incorrect path
 

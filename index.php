@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 1.0.3
+Version: 1.0.4
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -263,7 +263,7 @@ function display_plumwd_twitch_stream() {
 <script type="text/javascript" src="<?php echo $plugin_dir.'scripts/swfobject.js';?>"></script>
 <script type="text/javascript">
 			var flashvars = {};
-			flashvars.flashvars = "hostname=www.twitch.tv&channel=<?php echo $channelname;?>&auto_play=false&start_volume=<?php echo $startvolume;?>";
+			flashvars.flashvars = "hostname=www.twitch.tv&channel=<?php echo $channelname;?>&auto_play=<?php echo $autoplay;?>&start_volume=<?php echo $startvolume;?>";
 			var params = {};
 			params.allowfullscreen = "<?php echo $allowfullscreen;?>";
 			params.allowscriptaccess = "<?php echo $allowscriptaccess;?>";
