@@ -39,6 +39,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
     $plugin_dir = plugin_dir_url($file);
 	$social = $instance['social'];
 	$twittername = $instance['twittername'];
+	$plugin_dir_path = plugin_dir_path($file);
 
     extract($args, EXTR_SKIP);
 		echo $before_widget;
@@ -50,8 +51,18 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 		$channelname = get_option('pte_channelname');
 		
 		//let's get the profile image
-		$kraken = "https://api.twitch.tv/kraken/users/".$channelname;		
-		$userfile = file_get_contents($kraken);	
+		$kraken = "https://api.twitch.tv/kraken/users/".$channelname;	
+		$ch = curl_init($kraken);
+	    $fp = fopen($plugin_dir_path."kraken.json", "w");
+	
+	    curl_setopt($ch, CURLOPT_FILE, $fp);
+	    curl_setopt($ch, CURLOPT_HEADER, 0);
+	
+	    curl_exec($ch);
+	    curl_close($ch);
+	    fclose($fp);
+			
+		$userfile = file_get_contents($plugin_dir."kraken.json");	
 		$obj = json_decode($userfile);
 		$profile_img = $obj->logo;
 		if ($profile_img != null) {

@@ -3,7 +3,7 @@ Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
 Requires at least: 2.0.2
-Tested up to: 3.5.2
+Tested up to: 3.6
 Stable Tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -75,6 +75,7 @@ For help please visit http://www.plumeriawebdesign.com
 
 = 1.0.5 =
 * Updated a typo in the shortcode for a stream display
+* Updated the widget to grab contents from a local json file instead of remote file
 
 = 1.0.4 = 
 * Autoplay parameter was not set correctly
