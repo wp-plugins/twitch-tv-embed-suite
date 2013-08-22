@@ -63,7 +63,7 @@ The plugin also supports several attributes for the shortcode, below is a listin
 1. channel -> this must be set or the feed will not display. Usage:
     [plumwd_twitch_streamlist channel="plumwd"]
 2. videonum -> The number of streams to display. Will return the most recent streams in order from newest to oldest. Usage:
-    [plumwd_youtube_display channel="plumwd" videonum="4"]
+    [plumwd_twitch_display channel="plumwd" videonum="4"]
 3. display -> accepts two different options: horizontal or vertical. Usage:
     [plumwd_twitch_streamlist channel="plumwd" display="horizonal"]
  
@@ -73,8 +73,11 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 1.0.5 =
+* Updated a typo in the shortcode for a stream display
+
 = 1.0.4 = 
-* Autplay parameter was not set correctly
+* Autoplay parameter was not set correctly
 
 = 1.0.3 = 
 * Fixed incorrect path

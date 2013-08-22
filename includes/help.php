@@ -16,7 +16,7 @@ it links to the video at Twitch.</p>
 The plugin also supports several attributes for the shortcode, below is a listing of the attributes and what their purpose is:
 <ol>
 <li>channel -&gt; this <strong>must</strong> be set or the feed will not display. Usage:<br/><code>[plumwd_twitch_streamlist channel="plumwd"]</code></li>
-<li>videonum -&gt; The number of streams to display. Will return the most recent streams in order from newest to oldest. Usage:<br/><code>[plumwd_youtube_display channel="plumwd" videonum="4"]</code></li>
+<li>videonum -&gt; The number of streams to display. Will return the most recent streams in order from newest to oldest. Usage:<br/><code>[plumwd_twitch_display channel="plumwd" videonum="4"]</code></li>
 <li>display -&gt; accepts two different options: horizontal or vertical. Usage:<br/><code>[plumwd_twitch_streamlist channel="plumwd" display="horizonal"]</code></li>
 </ol>
 <h3>Twitch Stream</h3>
