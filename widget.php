@@ -82,7 +82,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 		<div style="margin: 10px 0px;"> 
          <img src="<?php echo $sized_img;?>" alt="profile image" style="float: left;"/>
  		 <div style="float: right; width: 70%;">
-         <h2><a href="http://twitch.tv/<? echo $channelname; ?>"><? echo $channelTitle; ?></a></h2>
+         <h2><a href="http://twitch.tv/<?php echo $channelname; ?>"><?php echo $channelTitle; ?></a></h2>
          <p><img src="<?php echo $plugin_dir;?>images/online.png" alt="online"/> Streaming live.</p>
          <p>Playing: <?php echo $game; ?></p>
          </div>

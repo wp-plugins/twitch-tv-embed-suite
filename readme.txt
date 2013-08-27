@@ -73,6 +73,9 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 1.0.6 =
+* Updated a bug with the widget display
+
 = 1.0.5 =
 * Updated a typo in the shortcode for a stream display
 * Updated the widget to grab contents from a local json file instead of remote file
