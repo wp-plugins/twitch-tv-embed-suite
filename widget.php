@@ -49,19 +49,25 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
    	      echo $before_title . $title . $after_title;
 		
 		$channelname = get_option('pte_channelname');
-		
+
 		//let's get the profile image
 		$kraken = "https://api.twitch.tv/kraken/users/".$channelname;	
+		$krakenjson = $plugin_dir_path."kraken.json";
+		
 		$ch = curl_init($kraken);
-	    $fp = fopen($plugin_dir_path."kraken.json", "w");
-	
-	    curl_setopt($ch, CURLOPT_FILE, $fp);
+
+	    curl_setopt($ch, CURLOPT_FILE, $krakenjson);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	    curl_setopt($ch, CURLOPT_HEADER, 0);
+		
+		$out = curl_exec($ch);
 	
-	    curl_exec($ch);
 	    curl_close($ch);
-	    fclose($fp);
-			
+
+	    $fp = fopen($krakenjson, "w");
+		fwrite($fp, $out);
+		fclose($fp);
+		
 		$userfile = file_get_contents($plugin_dir."kraken.json");	
 		$obj = json_decode($userfile);
 		$profile_img = $obj->logo;
@@ -93,7 +99,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 		<div style="margin: 10px 0px;">
  		 <img src="<?php echo $sized_img;?>" alt="profile image" style="float: left;"/>
          <div style="float: right; width: 70%;">
- 		 <h2><a href="http://twitch.tv/<? echo $channelname; ?>"><? echo $channelname; ?></a></h2>
+ 		 <h2><a href="http://twitch.tv/<?php echo $channelname; ?>"><?php echo $channelname; ?></a></h2>
 		 <p><img src="<?php echo $plugin_dir;?>images/offline.png" alt="offline"/> Offline.</p>
          </div>
         </div>

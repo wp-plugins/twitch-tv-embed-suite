@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 1.0.6
+Version: 1.0.7
 Author URI: http://www.plumeriawebdesign.com
 */
 

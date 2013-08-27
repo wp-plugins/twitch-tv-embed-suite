@@ -73,6 +73,9 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 1.0.7 =
+* Further bug fixes related to the widget display
+
 = 1.0.6 =
 * Updated a bug with the widget display
 
