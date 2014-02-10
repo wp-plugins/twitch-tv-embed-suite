@@ -42,21 +42,28 @@ settings area that allows the user to preview the stream prior to placement on y
 
 == Shortcode Usage ==
 
-1. To add a stream to your posts, pages, or widgets use the following code:
-    [plumwd_twitch_stream]
-2. To add a stream to your WordPress theme use the following code inside your template: `echo do_shortcode('[plumwd_twitch_stream]');`
-3. Use the icon from the WYSIWYG editor to insert into a post or page.
+1. To add a stream to your posts, pages, or widgets use the following code. Ensuring you set the Twitch channel name, height, and width if differing from the default settings:
+    [plumwd_twitch_stream channel="twitchchannelname" height="400" width="600"]
+2. To add a stream to your WordPress theme use the following code inside your template: `echo do_shortcode('[plumwd_twitch_stream channel="twitchchannelname" height="400" width="600"]');`
+3. Shortcode options are:
+    channel - *twitch channel name*
+    width - *width in pixels or percent. If using percent must use % sign.*
+    height - *height in pixels or percent. If using percent must use % sign.*
+4. Use the icon from the WYSIWYG editor to insert into a post or page.
 
-1. To add twitch chat to your posts, pages, or widgets use the following code:
-    [plumwd_twitch_chat]
-2. To add chat to your WordPress theme use the following code inside your template: `echo do_shortcode('[plumwd_twitch_chat]');`
+1. To add twitch chat to your posts, pages, or widgets use the following code. Ensure you set the Twitch channel name, height, and width like with the stream shortcode.
+    [plumwd_twitch_chat channel="twitchchannelname" height="400" width="600"]
+2. To add chat to your WordPress theme use the following code inside your template: `echo do_shortcode('[plumwd_twitch_chat channel="twitchchannelname" height="400" width="600"]');`
+3. Shortcode options are:
+    channel - *twitch channel name*
+    width - *width in pixels or percent. If using percent must use % sign.*
+    height - *height in pixels or percent. If using percent must use % sign.*
 3. Use the icon from the WYSIWYG editor to insert into a post or page.
-
 
 1.To add a Twitch TV stream list to your posts, pages, or widgets use the following shortcode:
-  [plumwd_twitch_streamlist]
+  [plumwd_twitch_streamlist channel="twitchchannelname" display="vertical" videonum="5"]
 2. To add the Twitch TV stream plugin to your WordPress theme use the following shortcode inside your template:
-    echo do_shortcode('[plumwd_twitch_streamlist]');
+    echo do_shortcode('[plumwd_twitch_streamlist channel="twitchchannelname" display="vertical" videonum="5"]');
 
 The plugin also supports several attributes for the shortcode, below is a listing of the attributes and what their purpose is:
 
@@ -72,6 +79,13 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+
+= 2.0 =
+* Multi-stream Support Added
+* Other random bug fixes
+* Preview removed from admin
+* Default height and width settings add in case of no setting for height/width
+* Must give channel name in shortcode
 
 = 1.0.7 =
 * Further bug fixes related to the widget display

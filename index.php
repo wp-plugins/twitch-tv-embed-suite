@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 1.0.7
+Version: 2.0
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -21,26 +21,23 @@ function plumwd_add_default_settings() {
 	$file = dirname(__FILE__) . '/index.php';
     $plugin_dir = plugin_dir_url($file);
 	
-	add_option('pte_channelname', 'plumwd');
 	add_option('pte_streamwidth', '620');
 	add_option('pte_streamheight', '378');
 	add_option('pte_autoplay', 'true');
 	add_option('pte_startvolume', 25);
-	add_option('pte_alternatecontent', '<div id="player">
+	add_option('pte_alternatecontent', '<div class="player">
 <div id="myAlternativeContent"><a href="http://www.twitchtv.com/plumwd"><img class="alignnone size-full wp-image-10" alt="no-flash" src="'.$plugin_dir.'images/618x376.gif" /></a></div>
 </div>');
 	add_option('pte_allowfullscreen', 'true');
 	add_option('pte_allowscriptaccess', 'always');	
 	add_option('pte_bgcolor', '#FFCC00');
 	add_option('pte_wmode', 'window');
-	add_option('pte_showchat', 'on');
 	add_option('pte_chatwidth', '500');
 	add_option('pte_chatheight', '400');
 }
 register_activation_hook( __FILE__, 'plumwd_add_default_settings' );
 
 function plumwd_remove_default_settings() {
-	delete_option('pte_channelname');
 	delete_option('pte_streamwidth');
 	delete_option('pte_streamheight');
 	delete_option('pte_autoplay');
@@ -50,7 +47,6 @@ function plumwd_remove_default_settings() {
 	delete_option('pte_allowscriptaccess');	
 	delete_option('pte_bgcolor');
 	delete_option('pte_wmode');
-	delete_option('pte_showchat');
 	delete_option('pte_chatwidth');
 	delete_option('pte_chatheight');
 }
@@ -67,7 +63,6 @@ function twitch_settings() {
   }
 
   if ($formset == "1") {  //our form has been submitted let's save the values
-    update_option('pte_channelname', $_POST['channelname']);
 	update_option('pte_streamwidth', $_POST['streamwidth']);
 	update_option('pte_streamheight', $_POST['streamheight']);
 	update_option('pte_autoplay', $_POST['autoplay']);
@@ -77,7 +72,6 @@ function twitch_settings() {
 	update_option('pte_allowscriptaccess', $_POST['allowscriptaccess']);	
 	update_option('pte_bgcolor', $_POST['background_color']);
 	update_option('pte_wmode', $_POST['wmode']);
-	update_option('pte_showchat', $_POST['showchat']);
 	update_option('pte_chatwidth', $_POST['chatwidth']);
 	update_option('pte_chatheight', $_POST['chatheight']);
 ?>
@@ -87,7 +81,6 @@ function twitch_settings() {
 
 <?php	
   }
-  $channelname = get_option('pte_channelname');
   $autoplay = get_option('pte_autoplay');
   $streamwidth = get_option('pte_streamwidth');
   $streamheight = get_option('pte_streamheight');
@@ -97,7 +90,6 @@ function twitch_settings() {
   $allowscriptaccess = get_option('pte_allowscriptaccess');
   $bgcolor = get_option('pte_bgcolor');
   $wmode = get_option('pte_wmode');
-  $showchat = get_option('pte_showchat');
   $chatwidth = get_option('pte_chatwidth');
   $chatheight = get_option('pte_chatheight');
 ?>
@@ -125,9 +117,8 @@ function twitch_settings() {
 </div>
 
 <form method="post" enctype="multipart/form-data" name="twitchform" id="twitchform">
-<p><label for="channelname" class="longlabel">Channel Name:</label><input type="text" name="channelname" id="channelname" value="<?php echo $channelname;?>"/></p>
-<p><label for="streamwidth" class="longlabel">Stream Width:</label><input type="text" name="streamwidth" id="streamwidth" value="<?php echo $streamwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
-<p><label for="streamheight" class="longlabel">Stream Height:</label><input type="text" name="streamheight" id="streamheight" value="<?php echo $streamheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
+<p><label for="streamwidth" class="longlabel">Default Stream Width:</label><input type="text" name="streamwidth" id="streamwidth" value="<?php echo $streamwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
+<p><label for="streamheight" class="longlabel">Default Stream Height:</label><input type="text" name="streamheight" id="streamheight" value="<?php echo $streamheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
 <p><label class="longlabel">Autoplay:</label>
   <input type="radio" id="autoplayyes" name="autoplay" value="true" <?php checked( $autoplay, 'true' ); ?>> <label for="autoplayyes">true</label>
   <input type="radio" id="autoplayno" name="autoplay" value="false" <?php checked( $autoplay, 'false' ); ?>> <label for="autoplayno">false</label>
@@ -156,7 +147,6 @@ function twitch_settings() {
     <option value="gpu" <?php selected( $wmode, 'gpu' ); ?>>gpu</option>
   </select>
 </p>
-<p><label for="showchat" class="longlabel">Show Chat</label> <input type="checkbox" id="showchat" name="showchat" value="1" <?php checked( $showchat, "1" ); ?>/></p>
 <p><label for="chatwidth" class="longlabel">Chat Width:</label><input type="text" name="chatwidth" id="chatwidth" value="<?php echo $chatwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
 <p><label for="chatheight" class="longlabel">Chat Height:</label><input type="text" name="chatheight" id="chatheight" value="<?php echo $chatheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
 
@@ -177,13 +167,6 @@ jQuery(document).ready(function($){
 });	
 </script>
 <?php	
- echo "<div class=\"preview\">\n";
- echo "<h2>Preview Stream</h2>";
- echo "<p>Note: the previews below are for functionality and setup, sizes are fixed in the preview and not indicative of any size settings you may have chosen.</p>\n";
-
-echo do_shortcode('[plumwd_twitch_stream]');
-if ($showchat == "1") { echo do_shortcode('[plumwd_twitch_chat]');} 
-echo "</div>\n";
 echo "</div>\n <!-- wrap -->";
 }
 
@@ -201,6 +184,7 @@ function display_plumwd_twitch_streamlist($atts) {
 	$videonum = 5;  
   }
   
+
   $videourl = "https://api.twitch.tv/kraken/channels/$channel/videos?limit=$videonum";
   $videos = file_get_contents($videourl);	
   $obj = json_decode($videos, true);
@@ -240,17 +224,25 @@ function plumwd_twitch_help () {
 }
 
 
-function display_plumwd_twitch_stream() {
+function display_plumwd_twitch_stream($atts) {
+  extract(shortcode_atts(array('channel' => '', 'height' => '', 'width' => ''), $atts));
+  
+  $display_stream = "";
   $file = dirname(__FILE__) . '/index.php';
   $plugin_dir = plugin_dir_url($file);
-  $channelname = get_option('pte_channelname');
-  if(is_admin()) {
-	$streamwidth = "618";
-	$streamheight = "376";  
-  } else {
+  
+  if ($width == "") {
     $streamwidth = get_option('pte_streamwidth');
-    $streamheight = get_option('pte_streamheight');
+  } else {
+	$streamwidth = $width;
   }
+  
+  if ($height == "") {
+    $streamheight = get_option('pte_streamheight');
+  } else {
+	$streamheight = $height;  
+  }
+  
   $autoplay = get_option('pte_autoplay');
   $startvolume = get_option('pte_startvolume');
   $alternatecontent = get_option('pte_alternatecontent');
@@ -260,50 +252,52 @@ function display_plumwd_twitch_stream() {
   $wmode = get_option('pte_wmode');
   $showchat = get_option('pte_showchat');
 ?>
-<script type="text/javascript" src="<?php echo $plugin_dir.'scripts/swfobject.js';?>"></script>
-<script type="text/javascript">
-			var flashvars = {};
-			flashvars.flashvars = "hostname=www.twitch.tv&channel=<?php echo $channelname;?>&auto_play=<?php echo $autoplay;?>&start_volume=<?php echo $startvolume;?>";
-			var params = {};
-			params.allowfullscreen = "<?php echo $allowfullscreen;?>";
-			params.allowscriptaccess = "<?php echo $allowscriptaccess;?>";
-			params.bgcolor = "<?php echo $bgcolor;?>";
-			params.wmode = "<?php echo $wmode;?>";
-			var attributes = {};
-			attributes.id = "live_embed_player_flash";
-			swfobject.embedSWF("http://www.twitch.tv/widgets/live_embed_player.swf", "myAlternativeContent", "<?php echo $streamwidth;?>", "<?php echo $streamheight;?>", "9.0.0", "<?php echo $plugin_dir.'scripts/expressInstall.swf';?>", flashvars, params, attributes);
-		</script>
-<?php echo stripslashes($alternatecontent); ?>
-<?php
+<?php $display_stream = "<script type=\"text/javascript\" src=\"".$plugin_dir."scripts/swfobject.js\"></script>\n";?>
+<?php $display_stream .= "<script type=\"text/javascript\">\n";?>
+<?php $display_stream .= "			var flashvars = {};\n"; ?>
+<?php $display_stream .= "			flashvars.flashvars = \"hostname=www.twitch.tv&channel=$channel&auto_play=$autoplay&start_volume=$startvolume\";\n";?>
+<?php $display_stream .= "			var params = {};\n"; ?>
+<?php $display_stream .= "			params.allowfullscreen = \"$allowfullscreen\";\n";?>
+<?php $display_stream .= "			params.allowscriptaccess = \"$allowscriptaccess\";\n";?>
+<?php $display_stream .= "			params.bgcolor = \"$bgcolor\";\n"; ?>
+<?php $display_stream .= "			params.scale = \"showAll\";\n";?>
+<?php $display_stream .= "			params.wmode = \"$wmode\";\n";?>
+<?php $display_stream .= "			var attributes = {};\n";?>
+<?php $display_stream .= "			attributes.id = \"live_embed_player_flash\";\n"; ?>
+<?php $display_stream .= "			swfobject.embedSWF(\"http://www.twitch.tv/widgets/live_embed_player.swf\", \"myAlternativeContent\", \"$streamwidth\", \"$streamheight\", \"9.0.0\", \"".$plugin_dir."scripts/expressInstall.swf\", flashvars, params, attributes);\n";?>
+<?php $display_stream .= "		</script>\n"; ?>
+<?php $display_stream .= stripslashes($alternatecontent); ?>
+<?php return $display_stream;
 }
 
-function display_plumwd_twitch_chat() {
-  $channelname = get_option('pte_channelname');
-  if(is_admin()) {
-	$chatwidth = "500";
-	$chatheight = "400";  
-  } else {
+function display_plumwd_twitch_chat($atts) {
+  extract(shortcode_atts(array('channel' => '', 'height' => '', 'width' => ''), $atts));
+
+  $display_chat = "";
+  
+  if ($width == "") {
     $chatwidth = get_option('pte_chatwidth');
+  } else {
+	$chatwidth = $width;
+  }
+  
+  if ($height == "") {
     $chatheight = get_option('pte_chatheight');
+  } else {
+	$chatheight = $height;  
   }
 
-?>
- <div id="chat">
-   <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=<?php echo $channelname;?>&amp;popout_chat=true" height="<?php echo $chatheight;?>" width="<?php echo $chatwidth;?>"></iframe>
- </div>
-<?php          
+
+  $display_chat = " <div id=\"chat\">\n";
+  $display_chat .= "   <iframe frameborder=\"0\" scrolling=\"no\" class=\"chat_embed\" src=\"http://twitch.tv/chat/embed?channel=".$channel."&amp;popout_chat=true\" height=\"".$chatheight."\>\" width=\"".$chatwidth.">\"></iframe>\n";
+  $display_chat .= " </div>\n";
+  
+  return $display_chat;
 }
 
 include('widget.php');
 
-//let's make the button to add the shortcode
-function add_button_sc_plumwd_twitch() {
- add_filter('mce_external_plugins', 'add_plugin_sc_plumwd_twitch');  
- add_filter('mce_buttons', 'register_button_sc_plumwd_twitch');  
-}
-add_action('init', 'add_button_sc_plumwd_twitch');
-
-//we need to register our button
+//let's make the button to add the shortcodeyou 
 function register_button_sc_plumwd_twitch($buttons) {
 array_push($buttons, "plumwd_twitch_stream", "plumwd_twitch_chat");
 return $buttons;  
