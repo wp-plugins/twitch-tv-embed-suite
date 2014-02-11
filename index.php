@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 2.0
+Version: 2.0.1
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -96,8 +96,10 @@ function twitch_settings() {
 <div id="wrap">
 <h1 id="twitchh1">Twitch TV Embed Settings</h1>
 <div class="twitch-welcome">
-<p><?php _e('This is where you can configure Twitch TV Embed settings.  By filling out the information below you can then use our shortcodes to insert your twitch stream and chat into any post, page, or widget on your site.','twitchembed' ) ?>
-<p><?php _e('To test your stream/chat and to make sure they function properly, you can preview them below. Note: height and width settings are not reflected in the preview.','twitchembed' ) ?>
+<p><?php _e('This is where you can configure Twitch TV Embed settings.  By filling out the information below you can then use our shortcodes to insert your twitch stream and chat into any post, page, or widget on your site.','twitchembed' ) ?></p>
+<p><?php _e('To test your stream/chat and to make sure they function properly, you can preview them below. Note: height and width settings are not reflected in the preview.','twitchembed' ) ?></p>
+<h2 style="color: rgba(241,26,30,1.00);">NOTE: YOU MUST NOW SET THE CHANNEL NAME IN THE SHORTCODE</h2>
+<p><?php _e('Visit <a href="http://www.plumeriawebdesign.com/twitch-tv-embed-suite/" target="_blank"> Twitch TV Embed Suite Help</a> for information and usage.');?></p>
 </div>
 <div style="width:45%;float:right;">
   <div class="metabox-holder postbox" style="padding-top:0;margin:10px;cursor:auto;width:30%;float:left;min-width:320px">
@@ -115,7 +117,6 @@ function twitch_settings() {
     </div>
   </div>
 </div>
-
 <form method="post" enctype="multipart/form-data" name="twitchform" id="twitchform">
 <p><label for="streamwidth" class="longlabel">Default Stream Width:</label><input type="text" name="streamwidth" id="streamwidth" value="<?php echo $streamwidth;?>" class="shortfield"/><br/><small>in px or %</small></p>
 <p><label for="streamheight" class="longlabel">Default Stream Height:</label><input type="text" name="streamheight" id="streamheight" value="<?php echo $streamheight;?>" class="shortfield"/><br/><small>in px or %</small></p>
