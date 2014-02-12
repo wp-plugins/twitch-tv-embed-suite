@@ -80,6 +80,9 @@ For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
 
+= 2.0.2 =
+Fixed issue with widget not having proper channel settings
+
 = 2.0.1 =
 Added clarification to admin screen regarding channel name settings
 

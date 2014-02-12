@@ -7,14 +7,20 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
  
   function form($instance)
   {
-    $instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+    $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'channel' => '', 'twittername' => '' ) );
     $title = $instance['title'];
+	$channel = $instance['channel'];
 	$twittername = $instance['twittername'];
 ?>
 
 <p>
   <label for="<?php echo $this->get_field_id('title'); ?>">Title:
     <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+  </label>
+</p>
+<p>
+  <label for="<?php echo $this->get_field_id('channel'); ?>">Channel Name:
+    <input class="widefat" id="<?php echo $this->get_field_id('channel'); ?>" name="<?php echo $this->get_field_name('channel'); ?>" type="text" value="<?php echo esc_attr($channel); ?>" />
   </label>
 </p>
 <p><label for="<?php echo $this->get_field_id('social'); ?>">Display Share Buttons: <input id="<?php echo $this->get_field_id('social'); ?>" name="<?php echo $this->get_field_name('social'); ?>" type="checkbox" value="1" <?php checked(isset($instance['social']) ? $instance['social'] : 0); ?> /></label></p>
@@ -29,6 +35,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
   {
     $instance = $old_instance;
     $instance['title'] = $new_instance['title'];
+	$instance['channel'] = $new_instance['channel'];
 	$instance['social'] = $new_instance['social'];
 	$instance['twittername'] = $new_instance['twittername'];
     return $instance;
@@ -39,6 +46,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
     $plugin_dir = plugin_dir_url($file);
 	$social = $instance['social'];
 	$twittername = $instance['twittername'];
+	$channel = $instance['channel'];
 	$plugin_dir_path = plugin_dir_path($file);
 
     extract($args, EXTR_SKIP);
@@ -48,7 +56,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 		if ($title != " ")
    	      echo $before_title . $title . $after_title;
 		
-		$channelname = get_option('pte_channelname');
+		$channelname = $channel;
 		
 		//let's get the profile image
 		$kraken = "https://api.twitch.tv/kraken/users/".$channelname;	
