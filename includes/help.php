@@ -23,14 +23,14 @@ The plugin also supports several attributes for the shortcode, below is a listin
 <p>This shortcode embeds the Twitch TV live stream player.</p>
 <ul>
 <li>To add a Twitch TV live stream player to your posts, pages, or widgets use the following shortcode:<br/><code>[plumwd_twitch_stream]</code></li>
-<li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitchembed/images/tv.png" alt="tv button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
+<li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitch-tv-embed-suite/images/tv.png" alt="tv button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
 <code>echo do_shortcode('[plumwd_twitch_stream]');</code></li>
 </ul>
 <h3>Twitch Chat</h3>
 <p>This shortcode embeds the Twitch TV live stream chat box.</p>
 <ul>
 <li>To add a Twitch TV live stream box to your posts, pages, or widgets use the following shortcode:<br/><code>[plumwd_twitch_chat]</code></li>
-<li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitchembed/images/chat.png" alt="chat button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
+<li>This shortcode takes no attributes and can be inserted using the button <img src="<?php echo $plugin_url;?>/twitch-tv-embed-suite/images/chat.png" alt="chat button"/> located in WordPress WYSIWYG editor, or by inserting the shortcode to your theme or php enabled widget:<br/>
 <code>echo do_shortcode('[plumwd_twitch_chat]');</code></li>
 </ul>
 <h3>Twitch TV Widget</h3>
@@ -39,11 +39,11 @@ The plugin also supports several attributes for the shortcode, below is a listin
 </div>
 <div style="width:45%;float:right;">
   <div class="metabox-holder postbox" style="padding-top:0;margin:10px;cursor:auto;width:30%;float:left;min-width:320px">
-    <h3 class="hndle" style="cursor: auto;"><span><?php  _e( 'Thank you for using Twitch Embed Suite', 'twitchembed' ); ?></span></h3>
-    <div class="inside twitchembed">
-      <img src="<?php echo $plugin_url;?>/twitchembed/images/preview.jpg" alt="Twitch Preview" />
+    <h3 class="hndle" style="cursor: auto;"><span><?php  _e( 'Thank you for using Twitch Embed Suite', 'twitch-tv-embed-suite' ); ?></span></h3>
+    <div class="inside twitch-tv-embed-suite">
+      <img src="<?php echo $plugin_url;?>/twitch-tv-embed-suite/images/preview.jpg" alt="Twitch Preview" />
   	  <?php _e( 'Please support Plumeria Web Design so we can continue making rocking plugins for you. If you enjoy this plugin, please consider offering a small donation. We also look forward
-	  to your comments and suggestions so that we may further improve our plugins to better serve you.', 'twitchembed' ); ?>
+	  to your comments and suggestions so that we may further improve our plugins to better serve you.', 'twitch-tv-embed-suite' ); ?>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="SLYFNBZU8V87W">

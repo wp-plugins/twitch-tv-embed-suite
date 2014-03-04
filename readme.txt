@@ -2,7 +2,7 @@
 Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
-Requires at least: 2.0.2
+Requires at least: 2.0.3
 Tested up to: 3.6
 Stable Tag: trunk
 License: GPLv2 or later
@@ -79,6 +79,9 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+
+= 2.0.3 =
+Fixed a bug with an incorrect path in the help file
 
 = 2.0.2 =
 Fixed issue with widget not having proper channel settings
