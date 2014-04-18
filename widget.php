@@ -70,7 +70,7 @@ class PlumwdTwitchStatusWidget extends WP_Widget {
 	    curl_close($ch);
 	    fclose($fp);
 			
-		$userfile = file_get_contents($plugin_dir."kraken.json");	
+		$userfile = file_get_contents($plugin_dir_path."kraken.json");	
 		$obj = json_decode($userfile);
 		$profile_img = $obj->logo;
 		if ($profile_img != null) {
