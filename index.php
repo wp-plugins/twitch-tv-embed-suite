@@ -4,7 +4,7 @@ Plugin Name: Twitch TV Embed Suite
 Plugin URI: http://www.plumeriawebdesign.com/twitch-tv-embed-suite/
 Description: Add Twitch TV Stream to your Site
 Author: Plumeria Web Design
-Version: 2.0.4
+Version: 2.0.5
 Author URI: http://www.plumeriawebdesign.com
 */
 
@@ -290,7 +290,7 @@ function display_plumwd_twitch_chat($atts) {
 
 
   $display_chat = " <div id=\"chat\">\n";
-  $display_chat .= "   <iframe frameborder=\"0\" scrolling=\"no\" class=\"chat_embed\" src=\"http://twitch.tv/chat/embed?channel=".$channel."&amp;popout_chat=true\" height=\"".$chatheight."\>\" width=\"".$chatwidth.">\"></iframe>\n";
+  $display_chat .= "   <iframe frameborder=\"0\" scrolling=\"no\" class=\"chat_embed\" src=\"http://twitch.tv/chat/embed?channel=".$channel."&amp;popout_chat=true\" height=\"".$chatheight."\" width=\"".$chatwidth."\"></iframe>\n";
   $display_chat .= " </div>\n";
   
   return $display_chat;

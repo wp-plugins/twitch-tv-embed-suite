@@ -2,7 +2,7 @@
 Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
-Requires at least: 2.0.4
+Requires at least: 2.0.5
 Tested up to: 3.9
 Stable Tag: trunk
 License: GPLv2 or later
@@ -79,6 +79,9 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+
+= 2.0. =
+Fixed a bug in the chat iframe height and width parameters
 
 = 2.0.4 =
 Fixed a bug with improper path setting in widget.php. Thanks Natdragon for the headsup
