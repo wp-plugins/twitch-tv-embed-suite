@@ -2,7 +2,7 @@
 Contributors: plumwd
 Donate link: http://www.plumeriawebdesign.com
 Tags: live stream, twitch tv, gaming
-Requires at least: 2.0.6
+Requires at least: 2.0.7
 Tested up to: 3.9
 Stable Tag: trunk
 License: GPLv2 or later
@@ -79,6 +79,9 @@ The plugin also supports several attributes for the shortcode, below is a listin
 For help please visit http://www.plumeriawebdesign.com
 
 == Changelog ==
+= 2.0.7 =
+Fixed a bug with the widget stream status display. With the closing of Justin.tv the api was no longer functional.
+
 = 2.0.6 =
 Fixed the shorcode editor buttons so that they display again. Also fixed an error with an extra value attribute.
 = 2.0.5=
